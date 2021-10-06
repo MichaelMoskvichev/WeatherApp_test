@@ -26,6 +26,7 @@ class CitiesViewController: UIViewController {
     
     //MARK: - Internal vars
     private var interactor: CitiesBusinessLogic?
+    private var dataToDisplay = [WeatherCellModel]()
     
 //  var router: (NSObjectProtocol & CitiesRoutingLogic & CitiesDataPassing)?
 
@@ -73,27 +74,44 @@ class CitiesViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+      
+      configureTableView()
     
       interactor?.fetchCities()
   }
   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-//  func doSomething()
-//  {
-//    let request = Cities.Something.Request()
-//    interactor?.doSomething(request: request)
-//  }
-//
-//  func displaySomething(viewModel: Cities.Something.ViewModel)
-//  {
-//    //nameTextField.text = viewModel.name
-//  }
+  // MARK: Internal logic
+
+  private func configureTableView() {
+      //источник данныйх
+      tableView.dataSource = self
+      tableView.delegate = self
+      tableView.tableFooterView = UIView(frame: .zero)
+  }
+
+}
+
+//MARK: - UiTableViewDataSource & Delegate implementation
+
+extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataToDisplay.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
     
 }
-//MARK: - extension VC
+
+
+//MARK: - Display logic implementation
 
 extension CitiesViewController: CitiesDisplayLogic {
     func displayData() {

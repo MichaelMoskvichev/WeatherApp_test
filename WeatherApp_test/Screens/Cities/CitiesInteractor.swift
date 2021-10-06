@@ -38,12 +38,4 @@ extension CitiesInteractor: CitiesBusinessLogic {
     
     
 }
-  
-  
-//  func doSomething(){
-//    worker = CitiesWorker()
-//    worker?.doSomeWork()
-//
-//    let response = Cities.Something.Response()
 
-//  }
