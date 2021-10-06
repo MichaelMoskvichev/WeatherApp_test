@@ -13,7 +13,7 @@
 import UIKit
 
 protocol CitiesDisplayLogic: class {
-  func displayData()
+    func display(data: [WeatherCellModel])
 }
 
 class CitiesViewController: UIViewController {
@@ -87,6 +87,8 @@ class CitiesViewController: UIViewController {
       tableView.dataSource = self
       tableView.delegate = self
       tableView.tableFooterView = UIView(frame: .zero)
+      tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: WeatherCell.cellIdentifier)
+      
   }
 
 }
@@ -104,7 +106,14 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: WeatherCell.cellIdentifier, for: indexPath) as? WeatherCell else { return UITableViewCell() }
+        
+        cell.setup(data: dataToDisplay[indexPath.row])
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
@@ -114,7 +123,10 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - Display logic implementation
 
 extension CitiesViewController: CitiesDisplayLogic {
-    func displayData() {
-        //display data
+    func display(data: [WeatherCellModel]) {
+        dataToDisplay.removeAll()
+        dataToDisplay.append(contentsOf: data)
+        tableView.reloadData()
     }
+    
 }

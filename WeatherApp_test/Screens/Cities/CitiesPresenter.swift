@@ -13,7 +13,7 @@
 import UIKit
 
 protocol CitiesPresentationLogic {
-  func presentData()
+    func present(data: [WeatherBackendModel])
 }
 
 class CitiesPresenter {
@@ -25,10 +25,15 @@ class CitiesPresenter {
 //MARK: - Presentation logic
 
 extension CitiesPresenter: CitiesPresentationLogic {
-    func presentData() {
-        
-    }
     
+    func present(data: [WeatherBackendModel]) {
+        let viewModel = data.map { model -> WeatherCellModel in
+            let cellModel = WeatherCellModel(cityId: Int(model.cityId) ?? 0, cityName: model.name, temperature: model.text)
+            
+            return cellModel
+        }
+        viewController?.display(data: viewModel)
+    }
 }
   
   // MARK: Do something

@@ -33,7 +33,24 @@ class CitiesInteractor {
 
 extension CitiesInteractor: CitiesBusinessLogic {
     func fetchCities() {
-        presenter?.presentData()
+        var backendResponse = [WeatherBackendModel]()
+        let model = WeatherBackendModel(cityId: "0", name: "London", text: "20", rating: 5, symbolCount: 100)
+        
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        backendResponse.append(model)
+        
+        
+        presenter?.present(data: backendResponse)
     }
     
     
