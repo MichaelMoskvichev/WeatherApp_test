@@ -14,6 +14,10 @@
 		74BA0D38270DB2CD008DAFFE /* WeatherApp_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74BA0D36270DB2CD008DAFFE /* WeatherApp_test.xcdatamodeld */; };
 		74BA0D3A270DB2D0008DAFFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74BA0D39270DB2D0008DAFFE /* Assets.xcassets */; };
 		74BA0D3D270DB2D0008DAFFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BA0D3B270DB2D0008DAFFE /* LaunchScreen.storyboard */; };
+		74BA0D48270DB783008DAFFE /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA0D47270DB783008DAFFE /* CitiesViewController.swift */; };
+		74BA0D4A270DB7B0008DAFFE /* CitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74BA0D49270DB7B0008DAFFE /* CitiesViewController.storyboard */; };
+		74BA0D4C270DB8E6008DAFFE /* CitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA0D4B270DB8E6008DAFFE /* CitiesPresenter.swift */; };
+		74BA0D4E270DBA5E008DAFFE /* CitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BA0D4D270DBA5E008DAFFE /* CitiesInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		74BA0D39270DB2D0008DAFFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74BA0D3C270DB2D0008DAFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74BA0D3E270DB2D0008DAFFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BA0D47270DB783008DAFFE /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		74BA0D49270DB7B0008DAFFE /* CitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CitiesViewController.storyboard; sourceTree = "<group>"; };
+		74BA0D4B270DB8E6008DAFFE /* CitiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresenter.swift; sourceTree = "<group>"; };
+		74BA0D4D270DBA5E008DAFFE /* CitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		74BA0D2C270DB2CD008DAFFE /* WeatherApp_test */ = {
 			isa = PBXGroup;
 			children = (
+				74BA0D44270DB2D8008DAFFE /* Screens */,
 				74BA0D2D270DB2CD008DAFFE /* AppDelegate.swift */,
 				74BA0D2F270DB2CD008DAFFE /* SceneDelegate.swift */,
 				74BA0D31270DB2CD008DAFFE /* ViewController.swift */,
@@ -68,6 +77,33 @@
 				74BA0D36270DB2CD008DAFFE /* WeatherApp_test.xcdatamodeld */,
 			);
 			path = WeatherApp_test;
+			sourceTree = "<group>";
+		};
+		74BA0D44270DB2D8008DAFFE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				74BA0D46270DB311008DAFFE /* CititesWeaterDetail */,
+				74BA0D45270DB2EC008DAFFE /* Cities */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		74BA0D45270DB2EC008DAFFE /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				74BA0D47270DB783008DAFFE /* CitiesViewController.swift */,
+				74BA0D49270DB7B0008DAFFE /* CitiesViewController.storyboard */,
+				74BA0D4B270DB8E6008DAFFE /* CitiesPresenter.swift */,
+				74BA0D4D270DBA5E008DAFFE /* CitiesInteractor.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		74BA0D46270DB311008DAFFE /* CititesWeaterDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CititesWeaterDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +166,7 @@
 			files = (
 				74BA0D3D270DB2D0008DAFFE /* LaunchScreen.storyboard in Resources */,
 				74BA0D3A270DB2D0008DAFFE /* Assets.xcassets in Resources */,
+				74BA0D4A270DB7B0008DAFFE /* CitiesViewController.storyboard in Resources */,
 				74BA0D35270DB2CD008DAFFE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,8 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74BA0D38270DB2CD008DAFFE /* WeatherApp_test.xcdatamodeld in Sources */,
+				74BA0D48270DB783008DAFFE /* CitiesViewController.swift in Sources */,
 				74BA0D32270DB2CD008DAFFE /* ViewController.swift in Sources */,
+				74BA0D4C270DB8E6008DAFFE /* CitiesPresenter.swift in Sources */,
 				74BA0D2E270DB2CD008DAFFE /* AppDelegate.swift in Sources */,
+				74BA0D4E270DBA5E008DAFFE /* CitiesInteractor.swift in Sources */,
 				74BA0D30270DB2CD008DAFFE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
