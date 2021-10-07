@@ -17,7 +17,7 @@ protocol CitiesDisplayLogic: class {
 }
 
 class CitiesViewController: UIViewController {
-    
+
     //MARK: - IBOutlet
     @IBOutlet private var tableView: UITableView!
     

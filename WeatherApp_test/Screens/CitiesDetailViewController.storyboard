@@ -69,6 +69,11 @@
                             <constraint firstItem="bgg-ta-apd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="147" id="wDB-zl-mtR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="hxY-59-vSd" id="p28-2V-mWo"/>
+                        <outlet property="conditionImageView" destination="bgg-ta-apd" id="swf-ki-OlM"/>
+                        <outlet property="temperatureLabel" destination="1Pp-4x-l1C" id="hvW-ql-Mfp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

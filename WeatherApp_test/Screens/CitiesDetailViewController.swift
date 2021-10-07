@@ -18,8 +18,15 @@ import UIKit
 
 class CitiesDetailViewController: UIViewController {
     
+    //MARK: - IBOutlet
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
     //MARK: - External vars
     private(set) var router: (CitiesDetailRoutingLogic & CitiesDetailDataPassing)?
+    private var weatherManager = WeatherWorker()
     
     //MARK: - Internal vars
     private var interactor: (CitiesDetailBusinessLogic & CitiesDetailDataStore)?
@@ -53,8 +60,26 @@ class CitiesDetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+      
+      weatherManager.delegate = self
     
       interactor?.fetchDetails()
   }
   
+}
+
+//MARK: - WeatherManagerDelegate
+
+extension CitiesDetailViewController: WeatherWorkerDelegate{
+    
+    func didUpdateWeather(_ weatherWorker : WeatherWorker, weather : WeatherModel) {
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = weather.name
+        }
+    }
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }
