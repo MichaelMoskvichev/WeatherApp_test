@@ -18,6 +18,9 @@ class WeatherCell: UITableViewCell {
     //MARK: - External vars
     weak var delegate: WeatherCellDelegate?
     
+    //MARK: - Internal vars
+    private var cityId: Int?
+    
     //MARK: - IBOutlets
     @IBOutlet weak var nameCity: UILabel!
     @IBOutlet weak var temperature: UILabel!
@@ -32,10 +35,14 @@ class WeatherCell: UITableViewCell {
 
     }
     
-    
+    @IBAction func didNextTap(_ sender: Any) {
+        guard let cityId = cityId else { return }
+        delegate?.didCellTap(cityId: cityId)
+    }
     
     
     func setup(data: WeatherCellModel) {
+        cityId = data.cityId
         nameCity.text = data.cityName
         temperature.text = data.temperature
     }

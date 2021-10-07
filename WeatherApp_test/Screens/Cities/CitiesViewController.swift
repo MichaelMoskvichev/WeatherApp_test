@@ -18,17 +18,16 @@ protocol CitiesDisplayLogic: class {
 
 class CitiesViewController: UIViewController {
     
-    
     //MARK: - IBOutlet
     @IBOutlet private var tableView: UITableView!
     
     //MARK: - External vars
+    private(set) var router: CitiesRoutingLogic?
     
     //MARK: - Internal vars
     private var interactor: CitiesBusinessLogic?
     private var dataToDisplay = [WeatherCellModel]()
     
-//  var router: (NSObjectProtocol & CitiesRoutingLogic & CitiesDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -48,28 +47,15 @@ class CitiesViewController: UIViewController {
     let viewController = self
     let presenter = CitiesPresenter()
     let interactor = CitiesInteractor()
+    let router = CitiesRouter()
     interactor.presenter = presenter
     presenter.viewController = viewController
     viewController.interactor = interactor
-//    let router = CitiesRouter()
-//    viewController.router = router
-//    router.viewController = viewController
+    viewController.router = router
+    router.viewController = viewController
 //    router.dataStore = interactor
   }
     
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-//      if let router = router, router.responds(to: selector) {
-//        router.perform(selector, with: segue)
-//      }
-    }
-  }
-  
   // MARK: View lifecycle
   
   override func viewDidLoad() {
@@ -79,7 +65,7 @@ class CitiesViewController: UIViewController {
     
       interactor?.fetchCities()
   }
-  
+    
   // MARK: Internal logic
 
   private func configureTableView() {
@@ -110,15 +96,20 @@ extension CitiesViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: WeatherCell.cellIdentifier, for: indexPath) as? WeatherCell else { return UITableViewCell() }
         
         cell.setup(data: dataToDisplay[indexPath.row])
+        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
 }
 
+extension CitiesViewController: WeatherCellDelegate{
+    func didCellTap(cityId: Int) {
+        router?.navigateToDetail(cityId: cityId)
+    }
+}
 
 //MARK: - Display logic implementation
 
@@ -130,3 +121,4 @@ extension CitiesViewController: CitiesDisplayLogic {
     }
     
 }
+
