@@ -17,7 +17,7 @@ protocol CitiesDisplayLogic: class {
 }
 
 class CitiesViewController: UIViewController {
-
+    
     //MARK: - IBOutlet
     @IBOutlet private var tableView: UITableView!
     
@@ -28,55 +28,55 @@ class CitiesViewController: UIViewController {
     private var interactor: CitiesBusinessLogic?
     private var dataToDisplay = [WeatherCellModel]()
     
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup() {
-    let viewController = self
-    let presenter = CitiesPresenter()
-    let interactor = CitiesInteractor()
-    let router = CitiesRouter()
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    viewController.interactor = interactor
-    viewController.router = router
-    router.viewController = viewController
-//    router.dataStore = interactor
-  }
     
-  // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-      
-      configureTableView()
+    // MARK: Object lifecycle
     
-      interactor?.fetchCities()
-  }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
     
-  // MARK: Internal logic
-
-  private func configureTableView() {
-      //источник данныйх
-      tableView.dataSource = self
-      tableView.delegate = self
-      tableView.tableFooterView = UIView(frame: .zero)
-      tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: WeatherCell.cellIdentifier)
-      
-  }
-
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let presenter = CitiesPresenter()
+        let interactor = CitiesInteractor()
+        let router = CitiesRouter()
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        viewController.interactor = interactor
+        viewController.router = router
+        router.viewController = viewController
+        //    router.dataStore = interactor
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureTableView()
+        
+        interactor?.fetchCities()
+    }
+    
+    // MARK: Internal logic
+    
+    private func configureTableView() {
+        //источник данныйх
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: WeatherCell.cellIdentifier)
+        
+    }
+    
 }
 
 //MARK: - UiTableViewDataSource & Delegate implementation

@@ -26,22 +26,21 @@ class CitiesDetailViewController: UIViewController {
     
     //MARK: - External vars
     private(set) var router: (CitiesDetailRoutingLogic & CitiesDetailDataPassing)?
-    private var weatherManager = WeatherWorker()
     
     //MARK: - Internal vars
     private var interactor: (CitiesDetailBusinessLogic & CitiesDetailDataStore)?
-
-  
+    
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-      super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-      setup()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
-      setup()
+        super.init(coder: aDecoder)
+        setup()
     }
     
     // MARK: Setup
@@ -55,31 +54,15 @@ class CitiesDetailViewController: UIViewController {
         router.dataStore = interactor
     }
     
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-      
-      weatherManager.delegate = self
     
-      interactor?.fetchDetails()
-  }
-  
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        interactor?.fetchDetails()
+    }
+    
 }
 
-//MARK: - WeatherManagerDelegate
-
-extension CitiesDetailViewController: WeatherWorkerDelegate{
-    
-    func didUpdateWeather(_ weatherWorker : WeatherWorker, weather : WeatherModel) {
-        DispatchQueue.main.async {
-            self.temperatureLabel.text = weather.temperatureString
-            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-            self.cityLabel.text = weather.name
-        }
-    }
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-}

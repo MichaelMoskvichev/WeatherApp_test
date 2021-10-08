@@ -23,7 +23,7 @@ protocol CitiesDetailDataStore: class {
 class CitiesDetailInteractor: CitiesDetailDataStore {
     
     var cityId: Int = -1
-  
+    
 }
 
 extension CitiesDetailInteractor: CitiesDetailBusinessLogic {

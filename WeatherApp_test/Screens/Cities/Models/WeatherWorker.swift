@@ -58,9 +58,9 @@ struct WeatherWorker {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
-            let name = decodedData.name
-            print(name)
-            let weather = WeatherModel(conditionId: id, name: name, temperature: temp)
+            let cityId = decodedData.cityId
+            print(cityId)
+            let weather = WeatherModel(conditionId: id, cityId: cityId, temperature: temp)
             return weather
             
         } catch {

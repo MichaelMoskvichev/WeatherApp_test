@@ -35,11 +35,5 @@ extension CitiesPresenter: CitiesPresentationLogic {
         viewController?.display(data: viewModel)
     }
 }
-  
-  // MARK: Do something
-  
-//  func presentSomething(response: Cities.Something.Response) {
-//    let viewModel = Cities.Something.ViewModel()
-//    viewController?.displaySomething(viewModel: viewModel)
-//  }
-    
+
+

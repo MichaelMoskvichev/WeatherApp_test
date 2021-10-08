@@ -17,13 +17,13 @@ protocol CitiesRoutingLogic {
 }
 
 protocol CitiesDataPassing {
-  var dataStore: CitiesDataStore? { get }
+    var dataStore: CitiesDataStore? { get }
 }
 
 class CitiesRouter: NSObject, CitiesDataPassing {
     
-  weak var viewController: UIViewController?
-  var dataStore: CitiesDataStore?
+    weak var viewController: UIViewController?
+    var dataStore: CitiesDataStore?
 }
 
 extension CitiesRouter: CitiesRoutingLogic {
@@ -31,7 +31,7 @@ extension CitiesRouter: CitiesRoutingLogic {
     func navigateToDetail(cityId: Int) {
         let storyboard = UIStoryboard(name: "CitiesDetailViewController", bundle: nil)
         guard let citiesVC = storyboard.instantiateViewController(withIdentifier: "CitiesDetailViewController") as? CitiesDetailViewController else { return }
-
+        
         citiesVC.router?.dataStore?.cityId = cityId
         viewController?.navigationController?.pushViewController(citiesVC, animated: true)
     }

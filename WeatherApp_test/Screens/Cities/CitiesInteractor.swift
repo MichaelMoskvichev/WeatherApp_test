@@ -13,19 +13,19 @@
 import UIKit
 
 protocol CitiesBusinessLogic {
-  func fetchCities()
+    func fetchCities()
 }
 
 protocol CitiesDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class CitiesInteractor {
     
     //MARK: - External vars
-  var presenter: CitiesPresentationLogic?
-//  var worker: CitiesWorker?
+    var presenter: CitiesPresentationLogic?
+    //  var worker: CitiesWorker?
     
 }
 
@@ -36,13 +36,6 @@ extension CitiesInteractor: CitiesBusinessLogic {
         var backendResponse = [WeatherBackendModel]()
         let model = WeatherBackendModel(cityId: "0", name: "London", text: "20", rating: 5, symbolCount: 100)
         
-        backendResponse.append(model)
-        backendResponse.append(model)
-        backendResponse.append(model)
-        backendResponse.append(model)
-        backendResponse.append(model)
-        backendResponse.append(model)
-        backendResponse.append(model)
         backendResponse.append(model)
         backendResponse.append(model)
         backendResponse.append(model)

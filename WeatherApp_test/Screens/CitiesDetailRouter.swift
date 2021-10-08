@@ -13,17 +13,17 @@
 import UIKit
 
 protocol CitiesDetailRoutingLogic {
-
+    
 }
 
 protocol CitiesDetailDataPassing {
-  var dataStore: CitiesDetailDataStore? { get }
+    var dataStore: CitiesDetailDataStore? { get }
 }
 
 class CitiesDetailRouter: CitiesDetailDataPassing {
     
     weak var dataStore: CitiesDetailDataStore?
-  
+    
 }
 
 extension CitiesDetailRouter: CitiesDetailRoutingLogic {
