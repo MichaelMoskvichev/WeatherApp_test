@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		748FD71A271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png in Resources */ = {isa = PBXBuildFile; fileRef = 748FD717271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png */; };
+		748FD71B271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png in Resources */ = {isa = PBXBuildFile; fileRef = 748FD718271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png */; };
+		748FD71C271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png in Resources */ = {isa = PBXBuildFile; fileRef = 748FD719271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png */; };
 		74B1D64D270E121600364CAF /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B1D64B270E121600364CAF /* WeatherCell.swift */; };
 		74B1D64E270E121600364CAF /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B1D64C270E121600364CAF /* WeatherCell.xib */; };
 		74B1D650270E130100364CAF /* WeatherCellModelModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B1D64F270E130100364CAF /* WeatherCellModelModels.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		748FD717271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png"; sourceTree = "<group>"; };
+		748FD718271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png"; sourceTree = "<group>"; };
+		748FD719271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png"; sourceTree = "<group>"; };
 		74B1D64B270E121600364CAF /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		74B1D64C270E121600364CAF /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		74B1D64F270E130100364CAF /* WeatherCellModelModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellModelModels.swift; sourceTree = "<group>"; };
@@ -71,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		748FD7162710678D00C51931 /* Sreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				748FD718271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png */,
+				748FD719271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png */,
+				748FD717271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png */,
+			);
+			path = Sreenshots;
+			sourceTree = "<group>";
+		};
 		74B1D649270E11CC00364CAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +135,7 @@
 		74BA0D2C270DB2CD008DAFFE /* WeatherApp_test */ = {
 			isa = PBXGroup;
 			children = (
+				748FD7162710678D00C51931 /* Sreenshots */,
 				74BA0D44270DB2D8008DAFFE /* Screens */,
 				74BA0D2D270DB2CD008DAFFE /* AppDelegate.swift */,
 				74BA0D2F270DB2CD008DAFFE /* SceneDelegate.swift */,
@@ -226,10 +243,13 @@
 			files = (
 				74BA0D3D270DB2D0008DAFFE /* LaunchScreen.storyboard in Resources */,
 				74BA0D3A270DB2D0008DAFFE /* Assets.xcassets in Resources */,
+				748FD71B271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.33.png in Resources */,
 				74BA0D4A270DB7B0008DAFFE /* CitiesViewController.storyboard in Resources */,
 				74BA0D35270DB2CD008DAFFE /* Main.storyboard in Resources */,
 				74B1D64E270E121600364CAF /* WeatherCell.xib in Resources */,
 				74B1D660270E2D9300364CAF /* CitiesDetailViewController.storyboard in Resources */,
+				748FD71A271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.40.png in Resources */,
+				748FD71C271068A600C51931 /* Simulator Screen Shot - iPhone 12 - 2021-10-08 at 14.52.36.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
