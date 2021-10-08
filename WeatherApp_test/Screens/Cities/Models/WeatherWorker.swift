@@ -28,6 +28,7 @@ struct WeatherWorker {
     func fetchWeater(cityName : String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(with: urlString)
+        print("запрос отправлен")
     }
     
     func performRequest(with urlString : String){

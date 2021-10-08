@@ -53,7 +53,6 @@ class CitiesViewController: UIViewController {
         viewController.interactor = interactor
         viewController.router = router
         router.viewController = viewController
-        //    router.dataStore = interactor
     }
     
     // MARK: View lifecycle

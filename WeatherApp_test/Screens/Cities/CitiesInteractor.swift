@@ -18,15 +18,13 @@ protocol CitiesBusinessLogic {
 
 protocol CitiesDataStore
 {
-    //var name: String { get set }
+    
 }
 
 class CitiesInteractor {
     
     //MARK: - External vars
     var presenter: CitiesPresentationLogic?
-    //  var worker: CitiesWorker?
-    
 }
 
 //MARK: - Business logic
